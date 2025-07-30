@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <title>Servicio Sanitario Jimenez</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      /* Base styles for animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+
+      .slide-in-left {
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: slideInLeft 0.6s ease-out forwards;
+      }
+
+      .slide-in-right {
+        opacity: 0;
+        transform: translateX(20px);
+        animation: slideInRight 0.6s ease-out forwards;
+      }
+
+      .scale-up {
+        opacity: 0;
+        transform: scale(0.95);
+        animation: scaleUp 0.6s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes scaleUp {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Delay animations for sequential appearance */
+      .fade-in-1 {
+        animation-delay: 0.1s;
+      }
+      .fade-in-2 {
+        animation-delay: 0.2s;
+      }
+      .fade-in-3 {
+        animation-delay: 0.3s;
+      }
+      .fade-in-4 {
+        animation-delay: 0.4s;
+      }
+      .fade-in-5 {
+        animation-delay: 0.5s;
+      }
+
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-[#fcf8f8] group/design-root overflow-x-hidden"
+      style='font-family: Epilogue, "Noto Sans", sans-serif;'
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="flex flex-col sm:flex-row items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3e7e8] px-4 py-3 sm:px-10 fade-in"
+        >
+          <div class="flex items-center gap-4 text-[#1b0e0e] mb-2 sm:mb-0">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-[#1b0e0e] text-lg font-bold leading-tight tracking-[-0.015em]">
+              Soluciones Multiservicios Jimenez
+            </h2>
+          </div>
+          <div
+            class="flex flex-1 flex-col sm:flex-row justify-end gap-4 sm:gap-8 items-center mt-2 sm:mt-0"
+          >
+           <div class="flex flex-wrap justify-center gap-4 sm:gap-9 fade-in-1">
+            <a
+              class="inline-flex items-center px-6 py-3 text-sm font-medium leading-normal text-white bg-[#25D366] rounded-full shadow-lg hover:bg-[#1DA851] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-opacity-50 transition ease-in-out duration-300"
+              href="https://wa.me/+56965058918"
+              target="_blank"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18 2H6C4.895 2 4 2.895 4 4v16c0 1.105.895 2 2 2h12c1.105 0 2-.895 2-2V4c0-1.105-.895-2-2-2zM9 19h6v-1H9v1zm0-15h6V5H9V4z"
+                />
+              </svg>
+              Contacto por WhatsApp
+            </a>
+          </div>
+            <button
+              onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })"
+              class="flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#ea2832] text-[#fcf8f8] text-sm font-bold leading-normal tracking-[0.015em] fade-in-2 mt-4 sm:mt-0"
+            >
+              <span class="truncate">Cotizar</span>
+            </button>
+          </div>
+        </header>
+        <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 text-center fade-in"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://i.ibb.co/wb5kffF/tl.jpg");'
+                >
+                  <div class="flex flex-col gap-2 slide-in-left">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                    >
+                      Su Solución Todo en Uno para Necesidades del Hogar y la Empresa
+                    </h1>
+                    <h2
+                      class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
+                    >
+                      Desde emergencias de fontanería hasta renovaciones completas y
+                      soldadura personalizada, ofrecemos servicios confiables y de alta
+                      calidad adaptados a sus requisitos.
+                    </h2>
+                  </div>
+                  <button
+                    onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })"
+                    class="flex min-w-[84px] max-w-[480px] w-full sm:w-auto cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#ea2832] text-[#fcf8f8] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] slide-in-right"
+                  >
+                    <span class="truncate">Solicite su Presupuesto Gratuito</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2
+              class="text-[#1b0e0e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 animate-on-scroll"
+            >
+              Nuestros Servicios
+            </h2>
+            <div class="flex flex-col gap-10 px-4 py-10 @container">
+              <div class="flex flex-col gap-4 animate-on-scroll">
+                <h1
+                  class="text-[#1b0e0e] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+                >
+                  Soluciones Completas para Cada Proyecto
+                </h1>
+                <p class="text-[#1b0e0e] text-base font-normal leading-normal max-w-[720px]">
+                  Ofrecemos una amplia gama de servicios para satisfacer todas sus
+                  necesidades, desde pequeñas reparaciones hasta grandes proyectos.
+                  Nuestros profesionales cualificados garantizan un trabajo de calidad y
+                  la satisfacción del cliente.
+                </p>
+              </div>
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 p-0"
+              >
+                <div
+                  class="flex flex-1 gap-3 rounded-lg border border-[#e7d0d1] bg-[#fcf8f8] p-4 flex-col scale-up animate-on-scroll"
+                >
+                  <div
+                    class="text-[#1b0e0e]"
+                    data-icon="Hammer"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M251.34,112,183.88,44.08a96.1,96.1,0,0,0-135.77,0l-.09.09L34.25,58.4A8,8,0,0,0,45.74,69.53L59.47,55.35a79.92,79.92,0,0,1,18.71-13.9L124.68,88l-96,96a16,16,0,0,0,0,22.63l20.69,20.69a16,16,0,0,0,22.63,0l96-96,14.34,14.34h0L200,163.3a16,16,0,0,0,22.63,0l28.69-28.69A16,16,0,0,0,251.34,112ZM60.68,216,40,195.31l68-68L128.68,148ZM162.34,114.32,140,136.67,119.31,116l22.35-22.35a8,8,0,0,0,0-11.32L94.32,35a80,80,0,0,1,78.23,20.41l44.22,44.51L188,128.66l-14.34-14.34A8,8,0,0,0,162.34,114.32Zm49,37.66-12-12L228,111.25l12,12Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#1b0e0e] text-base font-bold leading-tight">
+                      Fontanería
+                    </h2>
+                    <p class="text-[#994d51] text-sm font-normal leading-normal">
+                      Servicios expertos de fontanería para propiedades residenciales y
+                      comerciales, incluyendo detección de fugas, reparaciones de tuberías,
+                      instalaciones y más.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-1 gap-3 rounded-lg border border-[#e7d0d1] bg-[#fcf8f8] p-4 flex-col scale-up animate-on-scroll"
+                >
+                  <div
+                    class="text-[#1b0e0e]"
+                    data-icon="Buildings"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#1b0e0e] text-base font-bold leading-tight">
+                      Construcción General
+                    </h2>
+                    <p class="text-[#994d51] text-sm font-normal leading-normal">
+                      Servicios integrales de construcción, desde renovaciones y
+                      remodelaciones hasta nuevas construcciones y reparaciones
+                      estructurales.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-1 gap-3 rounded-lg border border-[#e7d0d1] bg-[#fcf8f8] p-4 flex-col scale-up animate-on-scroll"
+                >
+                  <div
+                    class="text-[#1b0e0e]"
+                    data-icon="Wrench"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M226.76,69a8,8,0,0,0-12.84-2.88l-40.3,37.19-17.23-3.7-3.7-17.23,37.19-40.3A8,8,0,0,0,187,29.24,72,72,0,0,0,88,96,72.34,72.34,0,0,0,94,124.94L33.79,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.26,45.26c.13-.13.27-.28.39-.42L131.06,162A72,72,0,0,0,232,96,71.56,71.56,0,0,0,226.76,69ZM160,152a56.14,56.14,0,0,1-27.07-7,8,8,0,0,0-9.92,1.77L67.11,211.51a16,16,0,0,1-22.62-22.62L109.18,133a8,8,0,0,0,1.77-9.93,56,56,0,0,1,58.36-82.31l-31.2,33.81a8,8,0,0,0-1.94,7.1L141.83,108a8,8,0,0,0,6.14,6.14l26.35,5.66a8,8,0,0,0,7.1-1.94l33.81-31.2A56.06,56.06,0,0,1,160,152Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#1b0e0e] text-base font-bold leading-tight">
+                      Soldadura
+                    </h2>
+                    <p class="text-[#994d51] text-sm font-normal leading-normal">
+                      Servicios de soldadura y fabricación de metales a medida,
+                      incluyendo reparaciones, modificaciones y nuevas instalaciones para
+                      diversas aplicaciones.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2
+              class="text-[#1b0e0e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 animate-on-scroll"
+            >
+              Por Qué Elegirnos
+            </h2>
+            <div class="flex flex-col gap-10 px-4 py-10 @container">
+              <div class="flex flex-col gap-4 animate-on-scroll">
+                <h1
+                  class="text-[#1b0e0e] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+                >
+                  Su Socio de Confianza para Calidad y Fiabilidad
+                </h1>
+                <p class="text-[#1b0e0e] text-base font-normal leading-normal max-w-[720px]">
+                  Estamos comprometidos a brindar un servicio excepcional y superar las
+                  expectativas del cliente. Nuestro equipo de profesionales
+                  experimentados ofrece soluciones confiables adaptadas a sus necesidades
+                  específicas.
+                </p>
+              </div>
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 p-0"
+              >
+                <div
+                  class="flex flex-1 gap-3 rounded-lg border border-[#e7d0d1] bg-[#fcf8f8] p-4 flex-col scale-up animate-on-scroll"
+                >
+                  <div
+                    class="text-[#1b0e0e]"
+                    data-icon="ShieldCheck"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M208,40H48A16,16,0,0,0,32,56v58.78c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#1b0e0e] text-base font-bold leading-tight">
+                      Calidad Garantizada
+                    </h2>
+                    <p class="text-[#994d51] text-sm font-normal leading-normal">
+                      Respaldamos nuestro trabajo con una garantía de satisfacción.
+                      Nuestros técnicos cualificados utilizan materiales de calidad y
+                      técnicas probadas para asegurar resultados duraderos.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-1 gap-3 rounded-lg border border-[#e7d0d1] bg-[#fcf8f8] p-4 flex-col scale-up animate-on-scroll"
+                >
+                  <div
+                    class="text-[#1b0e0e]"
+                    data-icon="Clock"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#1b0e0e] text-base font-bold leading-tight">
+                      Prontitud y Eficiencia
+                    </h2>
+                    <p class="text-[#994d51] text-sm font-normal leading-normal">
+                      Comprendemos la importancia de un servicio oportuno. Nuestro equipo
+                      responde rápidamente a sus solicitudes y completa los proyectos de
+                      manera eficiente, minimizando las interrupciones.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-1 gap-3 rounded-lg border border-[#e7d0d1] bg-[#fcf8f8] p-4 flex-col scale-up animate-on-scroll"
+                >
+                  <div
+                    class="text-[#1b0e0e]"
+                    data-icon="Users"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#1b0e0e] text-base font-bold leading-tight">
+                      Enfoque Centrado en el Cliente
+                    </h2>
+                    <p class="text-[#994d51] text-sm font-normal leading-normal">
+                      Su satisfacción es nuestra prioridad. Escuchamos sus necesidades,
+                      brindamos soluciones personalizadas y mantenemos una comunicación
+                      clara durante todo el proyecto.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-1 gap-3 rounded-lg border border-[#e7d0d1] bg-[#fcf8f8] p-4 flex-col scale-up animate-on-scroll"
+                >
+                  <div
+                    class="text-[#1b0e0e]"
+                    data-icon="Handshake"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M119.76,217.94A8,8,0,0,1,112,224a8.13,8.13,0,0,1-2-.24l-32-8a8,8,0,0,1-2.5-1.11l-24-16a8,8,0,1,1,8.88-13.31l22.84,15.23,30.66,7.67A8,8,0,0,1,119.76,217.94Zm132.69-96.46a15.89,15.89,0,0,1-8,9.25l-23.68,11.84-55.08,55.09a8,8,0,0,1-7.6,2.1l-64-16a8.06,8.06,0,0,1-2.71-1.25L35.86,142.87,11.58,130.73a16,16,0,0,1-7.16-21.46L29.27,59.58h0a16,16,0,0,1,21.46-7.16l22.06,11,53-15.14a8,8,0,0,1,4.4,0l53,15.14,22.06-11a16,16,0,0,1,21.46,7.16l24.85,49.69A15.9,15.9,0,0,1,252.45,121.48Zm-46.18,12.94L179.06,80H147.24L104,122c12.66,8.09,32.51,10.32,50.32-7.63a8,8,0,0,1,10.68-.61l34.41,27.57Zm-187.54-18,17.69,8.85L61.27,75.58,43.58,66.73ZM188,152.66l-27.71-22.19c-19.54,16-44.35,18.11-64.91,5a16,16,0,0,1-2.72-24.82.6.6,0,0,1,.08-.08L137.6,67.06,128,64.32,77.58,78.73,50.21,133.46l49.2,35.15,58.14,14.53Zm49.24-36.24L212.42,66.73l-17.69,8.85,24.85,49.69Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#1b0e0e] text-base font-bold leading-tight">
+                      Soluciones Integrales
+                    </h2>
+                    <p class="text-[#994d51] text-sm font-normal leading-normal">
+                      Desde la consulta inicial hasta la finalización del proyecto,
+                      ofrecemos soluciones de principio a fin, gestionando cada aspecto de
+                      su proyecto para una experiencia sin interrupciones.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2
+              class="text-[#1b0e0e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 animate-on-scroll"
+            >
+              Testimonios
+            </h2>
+            <div class="flex flex-col gap-8 overflow-x-hidden bg-[#fcf8f8] p-4">
+              <div class="flex flex-col gap-3 bg-[#fcf8f8] slide-in-left animate-on-scroll">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmi-6hlsoGe6AsshUrQGJP4xeXGirjPkNNB61NFT6V2Yg8pUfh17DuaW5adfnWNLsSp7OFe81V2PcQAUqMPbOEDgWNKQPHbBBSxzRL5BM2xTMPeTIdLD_jxwXjlAs0m_zfC0ot2g4woLt9LnpOyyUpCjj-9QXcaMxgG2trC68PmDuhdIjkC6RKFI67NH87SI26HUP-JR3nAYuumNyb3rF61839pQtwIhi8aVSZjKzSZom24pmhbKkiEhWcOl_6v1jNBBbgS-RGZw");'
+                  ></div>
+                  <div class="flex-1">
+                    <p class="text-[#1b0e0e] text-base font-medium leading-normal">
+                      Sofía Ramírez
+                    </p>
+                    <p class="text-[#994d51] text-sm font-normal leading-normal">
+                      Hace 2 meses
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-0.5">
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-[#1b0e0e] text-base font-normal leading-normal">
+                  "Tuve una emergencia de fontanería en mi casa, y Soluciones
+                  Multiservicios respondió rápidamente y resolvió el problema de manera
+                  eficiente. Su técnico fue profesional y conocedor, y quedé muy
+                  impresionada con la calidad de su trabajo."
+                </p>
+                <div class="flex gap-9 text-[#994d51]">
+                  <button class="flex items-center gap-2">
+                    <div
+                      class="text-inherit"
+                      data-icon="ThumbsUp"
+                      data-size="20px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20px"
+                        height="20px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-inherit">2</p>
+                  </button>
+                  <button class="flex items-center gap-2">
+                    <div
+                      class="text-inherit"
+                      data-icon="ThumbsDown"
+                      data-size="20px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20px"
+                        height="20px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 bg-[#fcf8f8] slide-in-right animate-on-scroll">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDc99pNPeKB7r-LWISg34RGn5o5hwosro8Ym1QCRFpfdi9r_hQSosG_WQVOhJqNqpHSXAII2Byk25oSpk-S9J84Z5JBDkhAJTXLLii82rz-kwvUAlkN9CfGXWx8vxOBJF6sg9b4ZeHJkJDxZQja_Tc3ZNXTukXg7DVHgiFotArh7GJyXn1_-PHuPsb96uiyHmpq0X62EUFwswJYYYPS6zPeqNEW10eIUsidY9HBqMjEGEsCMOj5YXVNvlfLz6jzonmW-c6lba9f7A");'
+                  ></div>
+                  <div class="flex-1">
+                    <p class="text-[#1b0e0e] text-base font-medium leading-normal">
+                      Carlos Morales
+                    </p>
+                    <p class="text-[#994d51] text-sm font-normal leading-normal">
+                      Hace 6 meses
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-0.5">
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-[#ea2832]" data-icon="Star" data-size="20px" data-weight="fill">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-[#1b0e0e] text-base font-normal leading-normal">
+                  "Estoy muy satisfecho con los servicios de construcción general que
+                  recibí de Soluciones Multiservicios. Renovaron mi cocina y baño, y el
+                  resultado final superó mis expectativas. ¡Altamente recomendados!"
+                </p>
+                <div class="flex gap-9 text-[#994d51]">
+                  <button class="flex items-center gap-2">
+                    <div
+                      class="text-inherit"
+                      data-icon="ThumbsUp"
+                      data-size="20px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20px"
+                        height="20px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-inherit">1</p>
+                  </button>
+                  <button class="flex items-center gap-2">
+                    <div
+                      class="text-inherit"
+                      data-icon="ThumbsDown"
+                      data-size="20px"
+                      data-weight="regular"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20px"
+                        height="20px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="contact-form" class="flex flex-col gap-10 px-4 py-10 @container animate-on-scroll">
+              <div class="flex flex-col gap-4">
+                <h1
+                  class="text-[#1b0e0e] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+                >
+                  Contáctanos para tu Presupuesto
+                </h1>
+                <p class="text-[#1b0e0e] text-base font-normal leading-normal max-w-[720px]">
+                  Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible para discutir tus necesidades.
+                </p>
+              </div>
+              <form class="flex flex-col gap-6 p-6 rounded-lg border border-[#e7d0d1] bg-[#fcf8f8]">
+                <div class="flex flex-col gap-2">
+                  <label for="name" class="text-[#1b0e0e] text-sm font-medium leading-normal">Nombre Completo</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Tu nombre completo"
+                    class="rounded-lg border border-[#e7d0d1] bg-white px-3 py-2 text-[#1b0e0e] text-base font-normal leading-normal focus:outline-none focus:ring-2 focus:ring-[#ea2832]"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="phone" class="text-[#1b0e0e] text-sm font-medium leading-normal">Número de Teléfono (WhatsApp)</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+56 9 XXXXXXXX"
+                    class="rounded-lg border border-[#e7d0d1] bg-white px-3 py-2 text-[#1b0e0e] text-base font-normal leading-normal focus:outline-none focus:ring-2 focus:ring-[#ea2832]"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="message" class="text-[#1b0e0e] text-sm font-medium leading-normal">Mensaje</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Describe el servicio que necesitas o tu consulta..."
+                    class="rounded-lg border border-[#e7d0d1] bg-white px-3 py-2 text-[#1b0e0e] text-base font-normal leading-normal focus:outline-none focus:ring-2 focus:ring-[#ea2832]"
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#ea2832] text-[#fcf8f8] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#c9202a] transition-colors duration-200"
+                >
+                  <span class="truncate">Enviar Solicitud</span>
+                </button>
+              </form>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        animateOnScrollElements.forEach(element => {
+          observer.observe(element);
+        });
+      });
+    </script>
+  </body>
+</html>

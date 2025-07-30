@@ -1,0 +1,400 @@
+/* =========================================== */
+/* Estilos Base                  */
+/* (Podrían estar en style.css también)    */
+/* =========================================== */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --text-color: #495057;
+    --heading-color: #212529;
+    --spacing-md: 1.5rem; /* 24px */
+    --spacing-lg: 3rem; /* 48px */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 0 auto;
+    padding: var(--spacing-md) 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--dark-color);
+}
+
+button.cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* =========================================== */
+/* Header y Navegación           */
+/* =========================================== */
+.main-header {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: white;
+    margin: 0;
+}
+
+.main-nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav .nav-list a {
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.main-nav .nav-list a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.main-nav .nav-list a:hover::after {
+    width: 100%;
+}
+
+/* Menú hamburguesa (oculto por defecto en desktop) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* =========================================== */
+/* Secciones Generales           */
+/* =========================================== */
+.hero-section {
+    background: linear-gradient(to right, var(--primary-color), #00aaff);
+    color: white;
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Altura mínima para que sea impactante */
+    animation: gradient-shift 10s ease infinite alternate; /* Animación de gradiente */
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.features-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--light-color);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas fluidas */
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md); /* Espaciado interno para los bordes */
+}
+
+.feature-card {
+    background-color: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card .icon-large {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cta-section {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.cta-section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.main-footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* =========================================== */
+/* Animaciones CSS              */
+/* =========================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0; /* Asegura que no se vea antes de la animación */
+}
+
+.animate-pop-in {
+    animation: popIn 0.6s ease-out forwards;
+}
+
+/* Retrasos para animaciones escalonadas */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+
+/* =========================================== */
+/* Media Queries                */
+/* =========================================== */
+
+/* Teléfonos pequeños a tablets (Hasta 768px) */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: row; /* Asegura que logo y toggle estén en la misma fila */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-nav {
+        width: 100%; /* Ocupa todo el ancho */
+        order: 1; /* Mueve la navegación debajo del logo/toggle */
+    }
+
+    .main-nav .nav-list {
+        flex-direction: column; /* Apila los elementos de la lista */
+        background-color: var(--dark-color);
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        max-height: 0; /* Oculto por defecto */
+        overflow: hidden;
+        transition: max-height 0.5s ease-out; /* Animación para el desplegado */
+    }
+
+    .main-nav .nav-list.active {
+        max-height: 300px; /* Altura máxima para mostrar todos los elementos */
+    }
+
+    .main-nav .nav-list li {
+        margin: 0.5rem 0;
+    }
+
+    .main-nav .nav-list a {
+        padding: 0.8rem 0;
+        display: block; /* Para que el área clickable sea mayor */
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón de hamburguesa */
+    }
+
+    /* Ajustes de tamaño de fuente y espaciado para móviles */
+    .hero-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .cta-section h3 {
+        font-size: 1.8rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        padding: 0 1rem; /* Ajusta el padding para que no se pegue a los bordes */
+    }
+
+    .feature-card {
+        margin-bottom: 1rem; /* Espacio entre tarjetas */
+    }
+}
+
+/* Tablets grandes a laptops (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-header .container {
+        flex-wrap: nowrap; /* Asegura que la nav no se rompa */
+    }
+
+    .main-nav .nav-list {
+        gap: 1rem; /* Reduce un poco el espacio entre ítems de nav */
+    }
+
+    .hero-section {
+        min-height: 60vh;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+
+    .cta-section h3 {
+        font-size: 2rem;
+    }
+
+    .grid-layout {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Podrían ser 2 o 3 columnas */
+        gap: 1.5rem;
+    }
+}
+
+/* Escritorio (1025px y más) */
+@media (min-width: 1025px) {
+    /* Estilos para desktop si son diferentes a los base, o para optimizaciones */
+    .hero-section {
+        padding: var(--spacing-lg) 0;
+        min-height: 70vh; /* Ajuste si quieres más espacio */
+    }
+
+    .hero-section h2 {
+        font-size: 3.5rem; /* Más grande en desktop */
+    }
+
+    .hero-section p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animaciones condicionales o ajustes de rendimiento */
+@media (prefers-reduced-motion: reduce) {
+    /* Deshabilita animaciones para usuarios que prefieren menos movimiento */
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-pop-in,
+    .hero-section {
+        animation: none !important;
+        transition: none !important;
+    }
+    .feature-card:hover {
+        transform: none;
+    }
+}
